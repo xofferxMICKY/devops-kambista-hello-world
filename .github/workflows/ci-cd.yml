@@ -34,6 +34,12 @@ jobs:
 
       - name: Setup gcloud
         uses: google-github-actions/setup-gcloud@v2
+        with:
+            project_id: devops-reto-tecnico
+
+      - name: Install GKE auth plugin
+        run: |
+            gcloud components install gke-gcloud-auth-plugin --quiet
 
       - name: Configure Docker
         run: |
@@ -49,10 +55,10 @@ jobs:
 
       - name: Get GKE credentials
         run: |
-          gcloud container clusters get-credentials $CLUSTER_NAME \
-            --zone $ZONE \
-            --project $PROJECT_ID
+          gcloud container clusters get-credentials devops-gke \
+            --zone us-central1-a \
+            --project devops-reto-tecnico
 
       - name: Deploy to GKE
         run: |
-          kubectl rollout restart deployment hello-world -n $NAMESPACE
+          kubectl rollout restart deployment hello-world -n hello-world
