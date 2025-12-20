@@ -32,6 +32,9 @@ El proyecto tiene habilitada la política iam.disableServiceAccountKeyCreation, 
 Como solución segura, se implementó Workload Identity Federation entre GitHub Actions y GCP.
 Esto permite autenticación sin claves, restringida únicamente al repositorio autorizado
 
+GitHub → OIDC → GCP → Service Account
+
+
 
 ## Monitoreo y Trazabilidad (Logs)
 El microservicio emite logs estructurados en formato JSON por cada request HTTP,
