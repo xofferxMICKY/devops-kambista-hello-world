@@ -10,7 +10,7 @@ Ejecutar el comando en consola de GCP
 ```bash
 kubectl get svc -n hello-world
 ``` 
-En el navegador colocar: http://<EXTERNAL-IP>
+En el navegador colocar: http://"EXTERNAL-IP"
 
 
 ## Cómo ejecutar el pipeline
@@ -57,7 +57,7 @@ En el modulo de terraform/variables.tf
 Agregar una variable "environment" en Terraform
 Archivos de variables por entorno (dev.tfvars, staging.tfvars, prod.tfvars)
 
-## reemplzar
+## reemplazar
 Valores hardcodeados (nombres de cluster, recursos, tamaños) por variables
 ### Ejemplo conceptual
 variable "environment" {
