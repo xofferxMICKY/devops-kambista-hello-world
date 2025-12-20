@@ -23,10 +23,10 @@ No se requiere ejecución manual.
 ## Decisiones técnicas y justificaciones
 ### Seguridad
 Se creó un Service Account dedicado para el pipeline, siguiendo el principio de menor privilegio.
-Roles:
-roles/artifactregistry.writer     # Publicar imágenes Docker
-roles/container.developer         # Desplegar recursos en GKE
-roles/container.clusterViewer     # Consultar estado del cluster
+- Roles:
+- roles/artifactregistry.writer     # Publicar imágenes Docker
+- roles/container.developer         # Desplegar recursos en GKE
+- roles/container.clusterViewer     # Consultar estado del cluster
 
 El proyecto tiene habilitada la política iam.disableServiceAccountKeyCreation, lo que impide el uso de claves estáticas.
 Como solución segura, se implementó Workload Identity Federation entre GitHub Actions y GCP.
